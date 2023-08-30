@@ -1,0 +1,16 @@
+import requests
+
+#url = 'https://api2.prismacloud.io/login' #This url is incorrect but it may be different in your environment.
+url = "https://api.prismacloud.io/login" #example
+
+payload = {
+    "customerName": "API_Testing_expire_2024", #unknown if needed.
+    "password": "oHF2x26yvCU51ZlqCxsRdgy+sAY=",
+    "username": "1d6d7625-809e-463f-a32f-5df7af444407"
+}
+headers = {"content-type": "application/json; charset=UTF-8"}
+
+response = requests.request("POST", url, json=payload, headers=headers)
+#response = requests.request("GET", url, headers=headers)
+
+print(response.text)
